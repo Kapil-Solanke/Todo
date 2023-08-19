@@ -1,0 +1,37 @@
+.navbar-container{
+    min-height: 3rem;
+    position: relative;
+}
+.dropdown{
+    width: 80%;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+.display-container{
+    display: flex;
+    width: fit-content;
+    min-width: 140px;
+    border: 1px solid rgb(118, 116, 116);
+    box-shadow: 1px 1px 3px rgb(75, 71, 71);
+    font-size: 20px;
+    gap: 0.4rem;
+    padding: 0.3rem;
+    align-items: center;
+    border-radius: 0.3rem;
+}
+
+button{
+    all: unset;
+}
+.dropdown-container{
+    position: absolute;
+    left: 1rem;
+    min-width: 200px;
+    background-color: rgb(243, 247, 247);
+    min-height: 100px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid rgb(52, 49, 49);
+}

@@ -1,0 +1,33 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: rgb(234, 237, 237);
+}
+
+.nav-container{
+    position: static;
+    width: 90%;
+    margin: 0px 1rem;
+    margin-top:1rem;
+    /* overflow-y: hidden; */
+}
+
+.usercontainer{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: scroll;
+    /* overflow-y: hidden; */
+    background-color: #F1F2FF;
+    /* background-color: rgb(236, 237, 239); */
+    /* -overflow-x: scroll; */
+    border-top: 1px solid rgb(49, 46, 46);
+}
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 9px solid #f1f2ff;
+    animation: spinner-bulqg1 0.8s infinite linear alternate,
+      spinner-oaa3wk 1.6s infinite linear;
+  }

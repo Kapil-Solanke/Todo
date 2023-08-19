@@ -1,0 +1,12 @@
+
+.left{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+}
+.right{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    color: #838894;
+}
