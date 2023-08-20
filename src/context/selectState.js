@@ -3,7 +3,7 @@ import selectContext from "./selectContext";
 
 function SelectState(props) {
   const [groupData, setGroupData] = useState('status');
-  const [priorityInfo,setPriorityInfo] = useState('priority');
+  const [priorityInfo,setPriorityInfo] = useState('Priority');
   const [loading,setLoading] = useState(false);
   const [data,setData] = useState([]);
 
