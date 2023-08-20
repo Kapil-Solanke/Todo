@@ -9,7 +9,6 @@ const UserContainer = ({ props }) => {
     props?.grouping === "User" ? "userId" : props?.grouping.toLowerCase();
 
   const priority = props?.ordering;
-  console.log(priority)
   const [items, setItems] = useState(null);
 
   // get unique items for given id, eg. id=Status , get all unique status that exist

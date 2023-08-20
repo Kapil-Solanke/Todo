@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { GrAdd } from "react-icons/gr";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import selectContext from "../context/selectContext";
+import './Header.css'
 const priorityMapping = {
     0: "No Priority",
     1: "Low",
@@ -83,7 +84,7 @@ const Header = ({ id, item, count }) => {
                 {/* changes according to id */}
                 <div className="left">
                     {/* img */}
-                    <div>
+                    <div className="icon">
                         {
                             <i className={`fa-solid fa-${icon}`}></i>
                         }
