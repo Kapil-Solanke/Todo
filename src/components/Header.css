@@ -1,8 +1,9 @@
 
 .left{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap:2rem;
+    
 }
 .right{
     display: flex;

@@ -13,7 +13,6 @@ const Header = ({ id, item, count }) => {
     const { data } = useContext(selectContext);
     const [name, setName] = useState("");
     const [icon, setIcon] = useState("");
-    const [userImg, setUserImg] = useState("");
 
     useEffect(() => {
         data?.users.filter((curr) => {
@@ -77,14 +76,7 @@ const Header = ({ id, item, count }) => {
                 break;
         }
     }, [id, item]);
-    useEffect(() => {
-        if (name) {
-            let firstName = name.split(' ')[0];
-            let lastName = name.split(' ')[1];
-            let image = `https://api.dicebear.com/5.x/initials/svg?seed=${firstName}${lastName}`
-            setUserImg(image);
-        }
-    }, [id,item]);
+    
     return (
         <>
             <div className=" header-container">

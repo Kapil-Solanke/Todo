@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import UserCard from "./common/UserCard";
 import "./UserContainer.css";
 import Header from "./Header";
+import selectContext from "../context/selectContext";
 const UserContainer = ({ props }) => {
   // extract data from props
   const data = props?.data;
   const id =
-    props?.grouping === "User" ? "userId" : props?.grouping.toLowerCase();
-
+  props?.grouping === "User" ? "userId" : props?.grouping.toLowerCase();
+  
   const priority = props?.ordering;
+  const {priorityInfo}=useContext(selectContext);
   const [items, setItems] = useState(null);
 
   // get unique items for given id, eg. id=Status , get all unique status that exist
@@ -16,14 +18,11 @@ const UserContainer = ({ props }) => {
     const uniqueItems = [
       ...new Set(data?.tickets?.map((ticket) => ticket[id])),
     ];
-    // console.log(uniqueItems);
     return uniqueItems;
   };
 
 
   useEffect(() => {
-    localStorage.setItem['grouping']=props.grouping;
-    localStorage.setItem['ordering']=props.priority;
     let res = fetchData();
     let arr = [];
     // for each item group all tickets that belong to that group. eg. get all items with status-pending, then status-completed
@@ -37,14 +36,7 @@ const UserContainer = ({ props }) => {
     
     setItems(arr);
     // Ordering/Sorting on basis of option selected by user
-    if (items) {
-      if (priority === "Title" || priority === "title") {
-        for (let i = 0; i < items.length; i++) {
-          items[i].sort((a, b) => a.title < b.title);
-          // console.log(items[i])
-        }
-      } 
-    }
+
   }, [props]);
 
   return (
@@ -61,7 +53,14 @@ const UserContainer = ({ props }) => {
                 />
             </div>
             <div className="user-column">
-              {item?.sort((a, b) => {return b.priority-a.priority})?.map((curr, i) => {
+              {(priority==='priority')?item?.sort((a, b) => {return b.priority-a.priority})?.map((curr, i) => {
+                // {console.log(JSON.parse(JSON.stringify(item)))}
+                return (
+                  <div key={i}>
+                    <UserCard user={curr} />
+                  </div>
+                )
+              }):item?.sort((a, b) => a.title.localeCompare(b.title))?.map((curr, i) => {
                 // {console.log(JSON.parse(JSON.stringify(item)))}
                 return (
                   <div key={i}>

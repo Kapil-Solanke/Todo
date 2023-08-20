@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import selectContext from "./selectContext";
 
 function SelectState(props) {
-  const [groupData, setGroupData] = useState(localStorage.getItem['grouping']??'status');
-  const [priorityInfo,setPriorityInfo] = useState(localStorage.getItem['ordering']??'priority');
+  const [groupData, setGroupData] = useState('status');
+  const [priorityInfo,setPriorityInfo] = useState('priority');
   const [loading,setLoading] = useState(false);
   const [data,setData] = useState([]);
 
